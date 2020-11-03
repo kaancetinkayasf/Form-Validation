@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign Up</h1>
+      <!-- Form -->
+      <form id="form">
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required minlength="3" maxlength="50">
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
+        </div>
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" pattern="[+]{1}[0-9]{11,14}" placeholder="Example: +1 5055213752" required >
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" placeholder="Min 8 charachters" id="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}$" title="Your password should include at least 1 number">
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" placeholder="Min 8 charachters" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[a-zA-Z]).{8,}$">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <!-- Error/Succes -->
+      <div class="message-container">
+        <h3 id="message">Welcome Aboard</h3>
+      </div>
+    </div>
+      <div class="show-data" id="show-data">
+        <span class="span" id="data"></span>
+      </div>
+  <script type="module" src="script.js"></script>
+  
+  </body>
+</html>
